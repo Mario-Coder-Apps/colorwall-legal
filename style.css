@@ -1,0 +1,83 @@
+/* Colorwall - support, privacy and legal pages (GitHub Pages; no cookies, no third-party content).
+   The app's own colours: warm paper, ink, the plum accent and the night blue of its icon. */
+:root {
+  --bg: #fbf7ef;
+  --card: #ffffff;
+  --ink: #3b302a;
+  --ink-soft: #8c7f74;
+  --line: #e6dcca;
+  --accent: #8e6a8c;
+  --butter: #f3e3b8;
+  --night: #2b3d5e;
+  --link: #7a5578;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c2233;
+    --card: #262d42;
+    --ink: #f3ece2;
+    --ink-soft: #b7ab9e;
+    --line: #3a4258;
+    --accent: #d9b4d6;
+    --link: #d9b4d6;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: radial-gradient(120% 90% at 50% 0%, #3a5079 0%, var(--night) 60%, #223250 100%);
+  padding: 22px 16px 28px;
+  text-align: center;
+  color: #fbf7ef;
+}
+header img { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35); }
+header img.small { width: 72px; height: 72px; border-radius: 17px; }
+header h1 { margin: 14px 0 2px; font-size: 34px; font-weight: 800; letter-spacing: 0.2px; }
+header p { margin: 0 auto; max-width: 30ch; color: var(--butter); font-weight: 600; text-wrap: balance; }
+
+.studio-back { display: block; text-align: left; max-width: 760px; margin: 0 auto 14px; color: #d8cfe6;
+               text-decoration: none; font-weight: 700; font-size: 15px; }
+.badge { display: inline-block; margin: 18px 0 0; padding: 10px 20px; border-radius: 999px;
+         background: rgba(251, 247, 239, 0.12); border: 1.5px solid rgba(251, 247, 239, 0.35);
+         color: #fbf7ef; font-weight: 700; font-size: 15px; }
+
+nav.lang { text-align: center; margin: 18px 0 0; font-weight: 700; }
+nav.lang a { color: var(--link); text-decoration: none; margin: 0 8px; }
+nav.lang a.on { color: var(--ink); text-decoration: underline; }
+
+main { max-width: 760px; margin: 0 auto; padding: 8px 16px 40px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 22px 18px;
+  margin: 18px 0 0;
+  box-shadow: 0 2px 10px rgba(59, 48, 42, 0.05);
+}
+.card h2 { font-size: 21px; margin: 18px 0 6px; }
+.card h3 { font-size: 17px; margin: 18px 0 2px; color: var(--accent); }
+.card p, .card li { margin: 0 0 8px; }
+.card ul { padding-left: 20px; margin: 8px 0; }
+.soft { color: var(--ink-soft); font-size: 15px; }
+a { color: var(--link); }
+
+[data-lang] { display: none; }
+html:not(.js) [data-lang="en"], [data-lang].shown { display: block; }
+span[data-lang].shown, html:not(.js) span[data-lang="en"] { display: inline; }
+
+footer { text-align: center; padding: 26px 16px 40px; color: var(--ink-soft); font-size: 14px; }
+footer a { color: var(--link); text-decoration: none; font-weight: 700; }
+footer p { margin: 10px 0 0; }
