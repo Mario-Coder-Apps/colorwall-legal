@@ -81,3 +81,38 @@ span[data-lang].shown, html:not(.js) span[data-lang="en"] { display: inline; }
 footer { text-align: center; padding: 26px 16px 40px; color: var(--ink-soft); font-size: 14px; }
 footer a { color: var(--link); text-decoration: none; font-weight: 700; }
 footer p { margin: 10px 0 0; }
+
+/* The content page (index.html, de/index.html; 2026-11-16): hero with the store button, sections, screenshots,
+   prices, FAQ. The legal pages above do not use these classes. */
+header.hero { padding: 22px 16px 34px; }
+header.hero h1 { margin: 16px auto 8px; max-width: 16ch; font-size: 38px; line-height: 1.12; text-wrap: balance; }
+header.hero h1 .sub { display: block; margin-top: 4px; font-size: 25px; font-weight: 700; color: var(--butter); }
+header.hero .pitch { max-width: 32ch; color: #fbf7ef; font-size: 19px; font-weight: 600; }
+.store-btn { display: inline-flex; flex-direction: column; align-items: center; margin: 22px 0 0; padding: 9px 28px 11px;
+             border-radius: 16px; background: #fbf7ef; color: var(--night); text-decoration: none; line-height: 1.25;
+             box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28); }
+.store-btn small { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #8e6a8c; }
+.store-btn span { font-size: 19px; font-weight: 800; }
+header.hero .platform { margin: 14px auto 0; max-width: none; color: #d8cfe6; font-size: 14px; font-weight: 600; }
+
+.card ol.steps { padding-left: 22px; margin: 8px 0 10px; }
+.card ol.steps li { margin: 0 0 10px; padding-left: 4px; }
+.card ol.steps li::marker { color: var(--accent); font-weight: 800; }
+
+.card ul.shots { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+         margin: 14px 0 10px; padding: 0; }
+@media (min-width: 620px) { .card ul.shots { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.card .shots li { margin: 0; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line);
+             background: var(--bg); }
+
+.prices { margin: 10px 0 12px; }
+.prices div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.prices div:last-child { border-bottom: 0; }
+.prices dt { font-weight: 800; color: var(--accent); }
+.prices dd { margin: 2px 0 0; }
+
+.card ul.more { list-style: none; padding: 0; }
+.card ul.more li { margin: 0 0 10px; }
+.card ul.more a { font-weight: 700; }
+footer.site a { white-space: nowrap; }
