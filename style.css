@@ -116,3 +116,15 @@ header.hero .platform { margin: 14px auto 0; max-width: none; color: #d8cfe6; fo
 .card ul.more li { margin: 0 0 10px; }
 .card ul.more a { font-weight: 700; }
 footer.site a { white-space: nowrap; }
+
+/* In-app browsers (TikTok, Instagram, Facebook) cannot open the App Store: the way out through the browser's menu. */
+.store-btn[hidden] { display: none; }
+.iab { position: relative; max-width: 420px; margin: 18px auto 2px; padding: 16px 18px 18px; text-align: left;
+       background: #fbf7ef; border: 2px solid var(--butter); border-radius: 18px; color: #3b302a; }
+.iab[hidden] { display: none; }
+.iab-title { font-weight: 800; font-size: 18px; margin: 0 0 8px; padding-right: 34px; color: #3b302a; }
+.iab ol { margin: 0 0 14px; padding-left: 22px; font-weight: 600; color: #3b302a; }
+.iab li { color: #3b302a; }
+.iab-arrow { position: absolute; top: 6px; right: 14px; font-size: 30px; font-weight: 900; color: #8e6a8c; }
+.iab-button { width: 100%; padding: 11px 14px; border: 0; border-radius: 12px; background: var(--butter); color: #2b3d5e;
+              font: inherit; font-weight: 800; cursor: pointer; }

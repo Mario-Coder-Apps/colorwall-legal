@@ -10,6 +10,7 @@
 <link rel="alternate" hreflang="de" href="https://mario-coder-apps.github.io/colorwall-legal/de/">
 <link rel="alternate" hreflang="x-default" href="https://mario-coder-apps.github.io/colorwall-legal/">
 <meta name="theme-color" content="#2b3d5e">
+<meta name="apple-itunes-app" content="app-id=6830637527">
 <link rel="icon" href="../favicon.png">
 <link rel="apple-touch-icon" href="../icon.png">
 <link rel="stylesheet" href="../style.css?v=2">
@@ -51,6 +52,9 @@
   "https://mario-coder-apps.github.io/colorwall-legal/img/de-malbuecher-regal.jpg",
   "https://mario-coder-apps.github.io/colorwall-legal/img/de-bilderwand.jpg"
  ],
+ "downloadUrl": "https://apps.apple.com/app/id6830637527",
+ "installUrl": "https://apps.apple.com/app/id6830637527",
+ "datePublished": "2026-11-19",
  "offers": {
   "@type": "Offer",
   "price": "0",
@@ -197,8 +201,17 @@
   <img src="../icon.png" width="104" height="104" alt="App-Icon von Colorwall: ein nach Zahlen ausgemaltes Mandala">
   <h1>Colorwall: <span class="sub">Cozy Coloring</span></h1>
   <p class="pitch">Malen nach Zahlen für Erwachsene. Ohne Werbung, für immer.</p>
-  <!-- Starttag: "Laden im" / "App Store", dazu das apple-itunes-app-Meta und downloadUrl / installUrl im JSON-LD -->
-  <a class="store-btn" href="https://apps.apple.com/app/id6830637527"><small>Bald</small> <span>im App Store</span></a>
+  <a class="store-btn" id="store" href="https://apps.apple.com/app/id6830637527"><small>Laden im</small> <span>App Store</span></a>
+  <div class="iab" id="iab" hidden>
+    <div class="iab-arrow" aria-hidden="true">&#8599;</div>
+    <p class="iab-title">Dieser Browser kann den App Store nicht öffnen</p>
+    <ol>
+      <li>Tippe oben rechts auf <strong>&bull;&bull;&bull;</strong></li>
+      <li>Wähle <strong>Im Browser öffnen</strong></li>
+      <li>Tippe dort auf <strong>Laden im App Store</strong></li>
+    </ol>
+    <button class="iab-button" type="button" id="copy-link">Oder den App-Store-Link kopieren</button>
+  </div>
   <p class="platform">Fürs iPhone · ab iOS 17 · gratis loslegen</p>
 </header>
 <nav class="lang" aria-label="Sprache"><a href="../" hreflang="en" lang="en">English</a> · <a class="on" href="./" hreflang="de" lang="de" aria-current="page">Deutsch</a></nav>
@@ -388,5 +401,30 @@
   <a href="../press/">Pressekit</a>
   <p>© 2026 Mario Haesler · <a href="../../">Cavebeer Entertainment</a></p>
 </footer>
+<script>
+  // TikTok, Instagram and Facebook open links in their own in-app browser, which shows a blank page for the App Store
+  // (Apple answers an iPhone with a redirect to itms-appss://, which those browsers do not hand over). There the page
+  // shows the way out through the browser's menu and the link to copy. "?iab" previews it in any browser.
+  (function () {
+    var ua = navigator.userAgent || "";
+    var inApp = /Instagram|FBAN|FBAV|FB_IAB|TikTok|musical_ly|BytedanceWebview|Bytedance|Threads/i.test(ua);
+    if (!inApp && !/[?&]iab\b/.test(location.search)) return;
+    document.getElementById("iab").hidden = false;
+    var store = document.getElementById("store");
+    store.hidden = true;
+    store.style.display = "none";
+    var link = "https://apps.apple.com/app/id6830637527";
+    var btn = document.getElementById("copy-link");
+    btn.addEventListener("click", function () {
+      var de = document.documentElement.lang === "de";
+      var done = function () { btn.textContent = de ? "Kopiert. Öffne Safari und füge ihn ein" : "Copied. Open Safari and paste it"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(done, function () { prompt(de ? "Link kopieren:" : "Copy this link:", link); });
+      } else {
+        prompt(de ? "Link kopieren:" : "Copy this link:", link);
+      }
+    });
+  })();
+</script>
 </body>
 </html>
